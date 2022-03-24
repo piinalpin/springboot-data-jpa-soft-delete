@@ -1,10 +1,13 @@
 package com.piinalpin.customsoftdeletes.service;
 
 import com.piinalpin.customsoftdeletes.entity.Author;
-import com.piinalpin.customsoftdeletes.http.request.AuthorRequest;
+import com.piinalpin.customsoftdeletes.http.dto.AuthorRequest;
 import com.piinalpin.customsoftdeletes.repository.AuthorRepository;
+import com.piinalpin.customsoftdeletes.util.ResponseUtil;
+
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +27,12 @@ public class AuthorService {
         Author author = Author.builder()
                 .fullName(request.getFullName())
                 .build();
-        return ResponseEntity.ok().body(authorRepository.save(author));
+        try {
+            author = authorRepository.save(author);
+            return ResponseUtil.build("SUCCESS", "Success", author, HttpStatus.OK);
+        } catch (Exception e) {
+            return ResponseUtil.build("UNKNOWN_ERROR", "Failed", null, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     public ResponseEntity<Object> getAll() {

@@ -3,7 +3,7 @@ package com.piinalpin.customsoftdeletes.service;
 import com.piinalpin.customsoftdeletes.entity.Author;
 import com.piinalpin.customsoftdeletes.entity.Book;
 import com.piinalpin.customsoftdeletes.entity.BookDetail;
-import com.piinalpin.customsoftdeletes.http.request.BookRequest;
+import com.piinalpin.customsoftdeletes.http.dto.BookRequest;
 import com.piinalpin.customsoftdeletes.repository.AuthorRepository;
 import com.piinalpin.customsoftdeletes.repository.BookDetailRepository;
 import com.piinalpin.customsoftdeletes.repository.BookRepository;

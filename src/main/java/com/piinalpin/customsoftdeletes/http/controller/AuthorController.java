@@ -1,7 +1,7 @@
 package com.piinalpin.customsoftdeletes.http.controller;
 
 import com.piinalpin.customsoftdeletes.entity.Author;
-import com.piinalpin.customsoftdeletes.http.request.AuthorRequest;
+import com.piinalpin.customsoftdeletes.http.dto.AuthorRequest;
 import com.piinalpin.customsoftdeletes.service.AuthorService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

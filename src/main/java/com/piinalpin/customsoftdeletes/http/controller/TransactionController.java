@@ -1,7 +1,7 @@
 package com.piinalpin.customsoftdeletes.http.controller;
 
 import com.piinalpin.customsoftdeletes.entity.Transaction;
-import com.piinalpin.customsoftdeletes.http.request.TransactionRequest;
+import com.piinalpin.customsoftdeletes.http.dto.TransactionRequest;
 import com.piinalpin.customsoftdeletes.service.TransactionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;

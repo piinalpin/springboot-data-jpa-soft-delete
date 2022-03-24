@@ -1,7 +1,7 @@
 package com.piinalpin.customsoftdeletes.http.controller;
 
 import com.piinalpin.customsoftdeletes.entity.Book;
-import com.piinalpin.customsoftdeletes.http.request.BookRequest;
+import com.piinalpin.customsoftdeletes.http.dto.BookRequest;
 import com.piinalpin.customsoftdeletes.service.BookService;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;

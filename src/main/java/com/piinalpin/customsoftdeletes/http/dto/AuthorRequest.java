@@ -1,4 +1,4 @@
-package com.piinalpin.customsoftdeletes.http.request;
+package com.piinalpin.customsoftdeletes.http.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
@@ -16,12 +16,10 @@ import java.io.Serializable;
 @AllArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TransactionDetailRequest implements Serializable {
+public class AuthorRequest implements Serializable {
 
-    private static final long serialVersionUID = 3141178093304012075L;
+    private static final long serialVersionUID = 2120677063776280918L;
 
-    private Long bookId;
-
-    private Integer qty;
+    private String fullName;
 
 }
