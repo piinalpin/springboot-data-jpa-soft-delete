@@ -3,6 +3,8 @@ package com.piinalpin.customsoftdeletes.entity;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.piinalpin.customsoftdeletes.entity.base.BaseEntity;
+
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -37,17 +39,21 @@ public class TransactionDetail extends BaseEntity {
     @Id
     @ManyToOne
     @JoinColumn(name = "transaction_id", nullable = false)
+    @ApiModelProperty(notes = "Object of transaction")
     private Transaction transaction;
 
     @Id
     @ManyToOne
     @JoinColumn(name = "book_id", nullable = false)
+    @ApiModelProperty(notes = "Object of book")
     private Book book;
 
     @Column(name = "qty", nullable = false)
+    @ApiModelProperty(notes = "The book qty")
     private Integer qty;
 
     @Column(name = "price", nullable = false)
+    @ApiModelProperty(notes = "Total price per books")
     private Integer price;
 
 }

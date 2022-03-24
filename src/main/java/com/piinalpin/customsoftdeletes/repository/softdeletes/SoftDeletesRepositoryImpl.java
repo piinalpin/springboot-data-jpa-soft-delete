@@ -1,6 +1,5 @@
 package com.piinalpin.customsoftdeletes.repository.softdeletes;
 
-import lombok.extern.slf4j.Slf4j;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -21,7 +20,6 @@ import java.util.Objects;
 import java.util.Optional;
 
 @SuppressWarnings("java:S119")
-@Slf4j
 public class SoftDeletesRepositoryImpl<T, ID extends Serializable> extends SimpleJpaRepository<T, ID>
         implements SoftDeletesRepository<T, ID> {
 
