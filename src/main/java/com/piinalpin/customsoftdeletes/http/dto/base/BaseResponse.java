@@ -16,7 +16,7 @@ import lombok.Data;
 @NoArgsConstructor
 @AllArgsConstructor
 @JsonNaming(PropertyNamingStrategies.SnakeCaseStrategy.class)
-public class BaseResponse implements Serializable {
+public class BaseResponse<T> implements Serializable {
 
     private static final long serialVersionUID = -395801934596215889L;
 
@@ -26,6 +26,6 @@ public class BaseResponse implements Serializable {
 
     private String message;
 
-    private Object data;
+    private T data;
     
 }

@@ -4,8 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import com.piinalpin.customsoftdeletes.entity.base.BaseEntityWithDeletedAt;
-
-import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -36,15 +34,12 @@ public class BookDetail extends BaseEntityWithDeletedAt {
 
     @OneToOne(mappedBy = "detail")
     @JoinColumn(name = "book_id", nullable = false)
-    @ApiModelProperty(notes = "Book object one to one")
     private Book book;
 
     @Column(name = "page", nullable = false)
-    @ApiModelProperty(notes = "The book detail page")
     private Integer page;
 
     @Column(name = "weight", nullable = false)
-    @ApiModelProperty(notes = "The book detail weight")
     private Integer weight;
 
 }

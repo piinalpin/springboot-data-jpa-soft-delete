@@ -1,5 +1,6 @@
 package com.piinalpin.customsoftdeletes.service;
 
+import com.piinalpin.customsoftdeletes.constant.AppConstant;
 import com.piinalpin.customsoftdeletes.entity.Author;
 import com.piinalpin.customsoftdeletes.http.dto.AuthorRequest;
 import com.piinalpin.customsoftdeletes.repository.AuthorRepository;
@@ -29,9 +30,9 @@ public class AuthorService {
                 .build();
         try {
             author = authorRepository.save(author);
-            return ResponseUtil.build("SUCCESS", "Success", author, HttpStatus.OK);
+            return ResponseUtil.build(AppConstant.ResponseCode.SUCCESS, author, HttpStatus.OK);
         } catch (Exception e) {
-            return ResponseUtil.build("UNKNOWN_ERROR", "Failed", null, HttpStatus.INTERNAL_SERVER_ERROR);
+            return ResponseUtil.build(AppConstant.ResponseCode.UNKNOWN_ERROR, null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 

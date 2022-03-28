@@ -2,6 +2,7 @@ package com.piinalpin.customsoftdeletes.util;
 
 import java.time.LocalDateTime;
 
+import com.piinalpin.customsoftdeletes.constant.AppConstant;
 import com.piinalpin.customsoftdeletes.http.dto.base.BaseResponse;
 
 import org.springframework.http.HttpStatus;
@@ -11,15 +12,15 @@ public class ResponseUtil {
 
     private ResponseUtil() {}
 
-    public static ResponseEntity<Object> build(String responseCode, String message, Object data, HttpStatus httpStatus) {
-        return new ResponseEntity<>(build(responseCode, message, data), httpStatus);
+    public static <T> ResponseEntity<Object> build(AppConstant.ResponseCode responseCode, T data, HttpStatus httpStatus) {
+        return new ResponseEntity<>(build(responseCode, data), httpStatus);
     }
 
-    private static BaseResponse build(String responseCode, String message, Object data) {
-        return BaseResponse.builder()
+    private static <T> BaseResponse<T> build(AppConstant.ResponseCode responseCode, T data) {
+        return BaseResponse.<T>builder()
                 .timestamp(LocalDateTime.now())
-                .responseCode(responseCode)
-                .message(message)
+                .responseCode(responseCode.name())
+                .message(responseCode.getMessage())
                 .data(data)
                 .build();
     }
